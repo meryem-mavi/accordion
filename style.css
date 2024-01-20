@@ -1,0 +1,267 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+body{
+    background-color: #444;
+    color: #fff;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(21,1fr);
+    place-items: center;
+    perspective: 720px;
+    font-size: 24px;
+    overflow: hidden;
+}
+body *:not(:empty) {
+    transform-style: preserve-3d;
+}
+
+.view {
+    width: 100%;
+    height: 100%;
+}
+.view:nth-child(1):hover ~ .scene {
+    --ry: -70deg;
+}
+.view:nth-child(2):hover ~ .scene {
+    --ry: -63deg;
+}
+.view:nth-child(3):hover ~ .scene {
+    --ry: -56deg;
+}
+.view:nth-child(4):hover ~ .scene {
+    --ry: -49deg;
+}
+.view:nth-child(5):hover ~ .scene {
+    --ry: -42deg;
+}
+.view:nth-child(6):hover ~ .scene {
+    --ry: -35deg;
+}
+.view:nth-child(7):hover ~ .scene {
+    --ry: -28deg;
+}
+.view:nth-child(8):hover ~ .scene {
+    --ry: -21deg;
+}
+.view:nth-child(9):hover ~ .scene {
+    --ry: -14deg;
+}
+.view:nth-child(10):hover ~ .scene {
+    --ry: -7deg;
+}
+.view:nth-child(11):hover ~ .scene {
+    --ry: 0deg;
+}
+.view:nth-child(12):hover ~ .scene {
+    --ry: 7deg;
+}
+.view:nth-child(13):hover ~ .scene {
+    --ry: 14deg;
+}
+.view:nth-child(14):hover ~ .scene {
+    --ry: 21deg;
+}
+.view:nth-child(15):hover ~ .scene {
+    --ry: 28deg;
+}
+.view:nth-child(16):hover ~ .scene {
+    --ry: 35deg;
+}
+.view:nth-child(17):hover ~ .scene {
+    --ry: 42deg;
+}
+.view:nth-child(18):hover ~ .scene {
+    --ry: 49deg;
+}
+.view:nth-child(19):hover ~ .scene {
+    --ry: 56deg;
+}
+.view:nth-child(20):hover ~ .scene {
+    --ry: 63deg;
+}
+.view:nth-child(21):hover ~ .scene {
+    --ry: 70deg;
+}
+.scene {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+    transform: rotateY(var(--ry, 0deg));
+    transition: transform 0.3s ease-out;
+}
+.scene::before {
+    content: "";
+    position: absolute;
+    width: 48em;
+    height: 48em;
+    transform: translate(-50%, calc(8em - 50%)) rotateX(90deg);
+    background-image: radial-gradient(transparent, #444 24em),
+    repeating-linear-gradient(30deg, #fff4 0 2px, transparent 0 2em),
+    repeating-linear-gradient(120deg, #fff4 0 2px, transparent 0 2em);
+}
+.scene::after {
+    content: "";
+    position: absolute;
+    width: 24em;
+    height: 24em;
+    background-color: #000;
+    transform: translate(-50%, 7em) rotateX(90deg);
+    border-radius: 50%;
+    filter: blur(1em);
+}
+.image {
+    position: absolute;
+    left: -0.5em;
+    top: -8em;
+    width: 1em;
+    height: 16em;
+}
+i {
+    position: absolute;
+    inset: 0;
+    background-color: #fffa;
+    transform: translateX(var(--tx, 0)) rotateY(var(--ry, 0deg));
+    background-image: var(--bi);
+    background-size: 1600% 100%;
+    background-position-x: var(--bpx, 0);
+}
+i:nth-child(1) {
+    --tx: -11.2em;
+    --bpx: 0em;
+}
+i:nth-child(2) {
+    --tx: -10.5em;
+    --bpx: 0em;
+}
+i:nth-child(3) {
+    --tx: -9.8em;
+    --bpx: -1em;
+}
+i:nth-child(4) {
+    --tx: -9.1em;
+    --bpx: -1em;
+}
+i:nth-child(5) {
+    --tx: -8.4em;
+    --bpx: -2em;
+}
+i:nth-child(6) {
+    --tx: -7.7em;
+    --bpx: -2em;
+}
+i:nth-child(7) {
+    --tx: -7em;
+    --bpx: -3em;
+}
+i:nth-child(8) {
+    --tx: -6.3em;
+    --bpx: -3em;
+}
+i:nth-child(9) {
+    --tx: -5.6em;
+    --bpx: -4em;
+}
+i:nth-child(10) {
+    --tx: -4.9em;
+    --bpx: -4em;
+}
+i:nth-child(11) {
+    --tx: -4.2em;
+    --bpx: -5em;
+}
+i:nth-child(12) {
+    --tx: -3.5em;
+    --bpx: -5em;
+}
+i:nth-child(13) {
+    --tx: -2.8em;
+    --bpx: -6em;
+}
+i:nth-child(14) {
+    --tx: -2.1em;
+    --bpx: -6em;
+}
+i:nth-child(15) {
+    --tx: -1.4em;
+    --bpx: -7em;
+}
+i:nth-child(16) {
+    --tx: -0.7em;
+    --bpx: -7em;
+}
+i:nth-child(17) {
+    --tx: 0em;
+    --bpx: -8em;
+}
+i:nth-child(18) {
+    --tx: 0.7em;
+    --bpx: -8em;
+}
+i:nth-child(19) {
+    --tx: 1.4em;
+    --bpx: -9em;
+}
+i:nth-child(20) {
+    --tx: 2.1em;
+    --bpx: -9em;
+}
+i:nth-child(21) {
+    --tx: 2.8em;
+    --bpx: -10em;
+}
+i:nth-child(22) {
+    --tx: 3.5em;
+    --bpx: -10em;
+}
+i:nth-child(23) {
+    --tx: 4.2em;
+    --bpx: -11em;
+}
+i:nth-child(24) {
+    --tx: 4.9em;
+    --bpx: -11em;
+}
+i:nth-child(25) {
+    --tx: 5.6em;
+    --bpx: -12em;
+}
+i:nth-child(26) {
+    --tx: 6.3em;
+    --bpx: -12em;
+}
+i:nth-child(27) {
+    --tx: 7em;
+    --bpx: -13em;
+}
+i:nth-child(28) {
+    --tx: 7.7em;
+    --bpx: -13em;
+}
+i:nth-child(29) {
+    --tx: 8.4em;
+    --bpx: -14em;
+}
+i:nth-child(30) {
+    --tx: 9.1em;
+    --bpx: -14em;
+}
+i:nth-child(31) {
+    --tx: 9.8em;
+    --bpx: -15em;
+}
+i:nth-child(32) {
+    --tx: 10.5em;
+    --bpx: -15em;
+}
+i:nth-child(odd) {
+    --ry: -45deg;
+    --bi: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRinoKua_rQeaXNB6T2gSEyK3J8CUo9j-9l2w&usqp=CAU);
+}
+i:nth-child(even) {
+    --ry: 45deg;
+    --bi: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-sBmE4tWspOLaIR62jfOyzrYV-WO0oV56Fg&usqp=CAU);
+}
